@@ -21,12 +21,12 @@ Route::get(
 );
 
 Route::get(
-    '/contato/{nome}/{categoria}/{assunto}/{mensagem}',
+    '/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}',
     function (
-        string $nome,
-        string $categoria,
-        string $assunto,
-        string $mensagem
+        string $nome = 'Desconhecido',
+        string $categoria = 'Informação',
+        string $assunto = 'Contato',
+        string $mensagem = 'Mensagem não informada'
     ) {
         echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
     }
