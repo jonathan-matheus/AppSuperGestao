@@ -2,7 +2,7 @@
 
 @php
 /*
-    if(isset($variavel)){}
+    if(empty($variavel)){}
 */
 @endphp
 
@@ -11,7 +11,10 @@
     <br />
     Status: {{ $fornecedores[1]['status'] }}
     <br />
-    @isset($fornecedores[1]['cnpj'])    
-        CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @isset($fornecedores[0]['cnpj'])
+        CNPJ: {{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+            - Vazio
+        @endempty
     @endisset
 @endisset
